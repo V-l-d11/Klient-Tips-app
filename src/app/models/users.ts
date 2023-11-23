@@ -3,4 +3,5 @@ export interface Employer {
   firstName: string;
   lastName: string;
   email: string;
+  img?: string;
 }

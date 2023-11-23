@@ -8,4 +8,8 @@ import { Employer } from 'src/app/models/users';
 })
 export class TipsUsersListComponent {
   @Input() data: Employer[] = [];
+
+  constructor() {
+    console.log(this.data, 'This data');
+  }
 }

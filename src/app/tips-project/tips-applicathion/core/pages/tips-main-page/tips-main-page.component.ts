@@ -15,5 +15,6 @@ export class TipsMainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataList = this.dataServiceUsers.getAllData();
+    console.log(this.dataList, 'This data LIst');
   }
 }
