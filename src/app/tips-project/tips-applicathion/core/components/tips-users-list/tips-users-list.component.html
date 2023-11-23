@@ -1,19 +1,20 @@
 <div *ngIf="!data">
-  <span
+  <span class="span-no-data"
     >We apologize.An employee with that name does not work in our
     restaurant....</span
   >
 </div>
 <div *ngFor="let item of data" class="container element-user">
-  <div class="row">
-    <div class=".col-6">
-      <img alt="user-info" />
-    </div>
-
-    <div class=".col-6 sec-info">
-      <h2 class="h2-info">{{ item.firstName }}</h2>
-      <h3 class="h3-info">{{ item.lastName }}</h3>
-      <span class="span-info">{{ item.email }}</span>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <img class="user-img" alt="" src="assets/img/img/userMock.png" />
+      </div>
+      <div class="col sec-info">
+        <h2 class="h2-info">{{ item.firstName }}</h2>
+        <h3 class="h3-info">{{ item.lastName }}</h3>
+        <span class="span-info">{{ item.email }}</span>
+      </div>
     </div>
   </div>
 </div>
