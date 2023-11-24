@@ -17,6 +17,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     TipsFooterComponent,
   ],
   imports: [CommonModule, FormsModule, MatInputModule, MatFormFieldModule],
-  exports: [TipsMainPageComponent],
+  exports: [TipsMainPageComponent, TipsFooterComponent],
 })
 export class TipsApplicathionModule {}

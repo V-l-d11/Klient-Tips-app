@@ -1,5 +1,8 @@
-<div *ngIf="!data">
-  <span class="span-no-data"
+<div
+  *ngIf="!data || data.length === 0"
+  class="d-flex align-items-center justify-content-center vh-100"
+>
+  <span class="span-no-data text-center"
     >We apologize.An employee with that name does not work in our
     restaurant....</span
   >

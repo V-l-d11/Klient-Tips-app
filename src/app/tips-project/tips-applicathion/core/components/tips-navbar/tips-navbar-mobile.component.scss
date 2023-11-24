@@ -3,19 +3,23 @@
   border-radius: 50px Im !important;
   background-color: #e0e3fa;
 }
-.lang-but{
+.lang-but {
   position: relative;
   border-radius: 7px;
-  background: #FFF;
+  background: #fff;
   width: 52px;
   height: 19px;
   margin-top: 28px;
+  padding: 0px !important;
   padding: 0px;
   border: none;
 }
 
-.lang-but>img{
+.lang-but > img {
   position: absolute;
   left: 20px;
   top: 3px;
+}
+.col-3 {
+  padding: 0px !important;
 }

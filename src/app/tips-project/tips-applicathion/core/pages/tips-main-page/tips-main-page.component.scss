@@ -1,5 +1,4 @@
 .container {
-  width: 100% !important;
   margin: 0px;
   padding: 0px;
 }
@@ -9,6 +8,18 @@
   margin: 0px;
 }
 
+.col {
+  width: 100%;
+}
 .row {
   padding: 0px;
+}
+
+.col-12 {
+}
+
+.user-list {
+}
+
+.t {
 }
