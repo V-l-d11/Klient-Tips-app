@@ -27,7 +27,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/assets/img/img/userMock.png",
-              "src/assets/img/svg/internet.svg"
+              "src/assets/img/svg/internet.svg",
+              "src/assets/img/svg/searchIcon.svg"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

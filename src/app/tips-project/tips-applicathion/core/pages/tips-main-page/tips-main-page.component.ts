@@ -16,7 +16,7 @@ export class TipsMainPageComponent implements OnInit {
   constructor(private dataServiceUsers: TipsPersonsDetailsDataService) {}
 
   ngOnInit(): void {
-    this.dataList = this.dataServiceUsers.getAllData();
+    this.filterDataList = this.dataServiceUsers.getAllData();
   }
   public onSearch(serachTerms: string) {
     this.filterDataList = this.dataServiceUsers.searchEl(serachTerms);
