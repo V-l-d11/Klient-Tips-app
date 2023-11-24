@@ -8,6 +8,14 @@ import { TipsFooterComponent } from './core/components/tips-footer/tips-footer.c
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
 @NgModule({
   declarations: [
     TipsMainPageComponent,
@@ -16,7 +24,21 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     TipsUsersListComponent,
     TipsFooterComponent,
   ],
-  imports: [CommonModule, FormsModule, MatInputModule, MatFormFieldModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    HttpClientModule, // Import HttpClientModule here
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en',
+    }),
+  ],
   exports: [TipsMainPageComponent, TipsFooterComponent],
 })
-export class TipsApplicathionModule {}
+export class TipsApplicationModule {}

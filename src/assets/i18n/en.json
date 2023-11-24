@@ -1,0 +1,10 @@
+{
+  "user-list": {
+    "search-section": {
+      "span": "Choose the employee for whom you want to send tips"
+    },
+    "footer": {
+      "span": "@2023 West Pomeranian UT"
+    }
+  }
+}
