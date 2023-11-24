@@ -58,11 +58,21 @@ export class TipsPersonsDetailsDataService implements OnInit {
   ];
 
   constructor() {}
+
   public getAllData() {
     return this.fakeDataEmplyers;
   }
-  public findOneELement(id: number) {
-    return this.fakeDataEmplyers.find((el) => el.id === id);
+
+  public searchEl(serachTerms: string): Employer[] {
+    console.log(serachTerms, 'Service searchterms');
+    const filterUsers = this.fakeDataEmplyers.filter(
+      (user) =>
+        user.firstName.toLowerCase().includes(serachTerms.toLowerCase()) ||
+        user.lastName.toLowerCase().includes(serachTerms.toLowerCase())
+    );
+    console.log(filterUsers);
+    return filterUsers;
   }
+
   ngOnInit(): void {}
 }

@@ -11,10 +11,14 @@ import { Employer } from 'src/app/models/users';
 })
 export class TipsMainPageComponent implements OnInit {
   dataList!: Employer[];
+  filterDataList!: Employer[];
+
   constructor(private dataServiceUsers: TipsPersonsDetailsDataService) {}
 
   ngOnInit(): void {
     this.dataList = this.dataServiceUsers.getAllData();
-    console.log(this.dataList, 'This data LIst');
+  }
+  public onSearch(serachTerms: string) {
+    this.filterDataList = this.dataServiceUsers.searchEl(serachTerms);
   }
 }

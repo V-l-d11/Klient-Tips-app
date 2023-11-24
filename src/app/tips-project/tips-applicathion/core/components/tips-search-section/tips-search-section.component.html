@@ -1,1 +1,17 @@
-<p>tips-search-section works!</p>
+<div class="container">
+  <div class="row">
+    <input
+      class="col inpt-search"
+      [(ngModel)]="searchTerms"
+      placeholder="Employee Search"
+      (input)="onInputChange()"
+    />
+  </div>
+  <div class="row">
+    <div class="col">
+      <span class="span-content"
+        >Choose the employee for whom you want to send tips</span
+      >
+    </div>
+  </div>
+</div>

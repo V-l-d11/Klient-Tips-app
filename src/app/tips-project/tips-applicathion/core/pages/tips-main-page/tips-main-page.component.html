@@ -2,11 +2,17 @@
   <app-tips-navbar class="col-12"></app-tips-navbar>
 </div>
 <div class="row">
-  <app-tips-search-section class="col-12"></app-tips-search-section>
+  <app-tips-search-section
+    (searchChanged)="onSearch($event)"
+    class="col-12"
+  ></app-tips-search-section>
 </div>
 <div class="row">
-  <app-tips-users-list class="col-12" [data]="dataList"></app-tips-users-list>
+  <app-tips-users-list
+    class="col-12"
+    [data]="filterDataList"
+  ></app-tips-users-list>
 </div>
 <div class="row">
-  <app-tips-footer class=".col"></app-tips-footer>
+  <app-tips-footer class="col"></app-tips-footer>
 </div>

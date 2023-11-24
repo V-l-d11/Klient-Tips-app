@@ -1,0 +1,39 @@
+.container {
+  margin-top: 31px;
+  margin: 0px;
+}
+.row {
+  margin: 0px;
+  padding: 0px;
+}
+.inpt-search {
+  width: 263px;
+  height: 33px;
+  flex-shrink: 0;
+  border-radius: 7px;
+  padding-left: 5px;
+  border: 1px solid #000;
+}
+.inpt-search::placeholder {
+  color: #acacac;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+
+  line-height: normal;
+}
+.inpt-search:read-write {
+  padding-left: 20px;
+}
+
+.span-content {
+  color: #000;
+  font-family: Inter;
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0px;
+  padding: 0px;
+}
