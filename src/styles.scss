@@ -15,7 +15,8 @@ $tips-project-theme: mat.define-light-theme(
 @include mat.all-component-themes($tips-project-theme);
 html,
 body {
-  height: 100%;
+  width: 393px !important;
+  box-sizing: border-box !important;
 }
 body {
   margin: 0;

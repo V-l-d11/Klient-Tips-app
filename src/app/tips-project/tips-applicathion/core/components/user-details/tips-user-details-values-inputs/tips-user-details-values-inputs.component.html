@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button
+        class="btn"
+        (click)="selectAmount(2)"
+        [ngClass]="{ selected: selectedAmount === 2 }"
+      >
+        $2
+      </button>
+    </div>
+    <div class="col">
+      <button
+        class="btn"
+        (click)="selectAmount(3)"
+        [ngClass]="{ selected: selectedAmount === 3 }"
+      >
+        $3
+      </button>
+    </div>
+    <div class="col">
+      <button
+        class="btn"
+        (click)="selectAmount(5)"
+        [ngClass]="{ selected: selectedAmount === 5 }"
+      >
+        $5
+      </button>
+    </div>
+    <div class="col">
+      <button
+        class="btn"
+        (click)="selectAmount(8)"
+        [ngClass]="{ selected: selectedAmount === 8 }"
+      >
+        $8
+      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col text-center">
+      <button class="btn-span"><span class="span">Other amount</span></button>
+    </div>
+  </div>
+</div>

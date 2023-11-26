@@ -8,7 +8,7 @@
   >
 </div>
 <div *ngFor="let item of data" class="container element-user">
-  <div class="container">
+  <div class="container" (click)="linkForUser(item)">
     <div class="row">
       <div class="col-6">
         <img class="user-img" alt="" src="assets/img/img/userMock.png" />

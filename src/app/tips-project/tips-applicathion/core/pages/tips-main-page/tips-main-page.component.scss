@@ -9,17 +9,20 @@
 }
 
 .col {
-  width: 100%;
+  width: 393px;
+  box-sizing: border-box;
+  padding: 0px;
 }
 .row {
-  padding: 0px;
 }
 
 .col-12 {
 }
 
 .user-list {
+  padding: 0px !important;
 }
 
 .t {
+  padding: 0px !important;
 }

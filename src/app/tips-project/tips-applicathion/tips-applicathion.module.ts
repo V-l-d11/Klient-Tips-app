@@ -11,6 +11,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TipsUserTipPageComponent } from './core/pages/tips-user-tip-page/tips-user-tip-page.component';
+import { TipsPrevPageComponent } from './core/pages/tips-prev-page/tips-prev-page.component';
+import { AppRoutingModule } from 'src/app/app-routing.module';
+import { TipsUserDetailsHeaderComponent } from './core/components/user-details/tips-user-details-header/tips-user-details-header.component';
+import { TipsUserDetailsValuesInputsComponent } from './core/components/user-details/tips-user-details-values-inputs/tips-user-details-values-inputs.component';
+import { TipsUserInputTipsComponent } from './core/components/user-details/tips-user-input-tips/tips-user-input-tips.component';
+import { TipsUserBtnSectionComponent } from './core/components/user-details/tips-user-btn-section/tips-user-btn-section.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,13 +30,20 @@ export function HttpLoaderFactory(http: HttpClient) {
     TipsSearchSectionComponent,
     TipsUsersListComponent,
     TipsFooterComponent,
+    TipsUserTipPageComponent,
+    TipsPrevPageComponent,
+    TipsUserDetailsHeaderComponent,
+    TipsUserDetailsValuesInputsComponent,
+    TipsUserInputTipsComponent,
+    TipsUserBtnSectionComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
+
     MatInputModule,
     MatFormFieldModule,
-    HttpClientModule, // Import HttpClientModule here
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -39,6 +53,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       defaultLanguage: 'en',
     }),
   ],
-  exports: [TipsMainPageComponent, TipsFooterComponent],
+  exports: [TipsMainPageComponent, TipsFooterComponent, TipsUsersListComponent],
 })
 export class TipsApplicationModule {}

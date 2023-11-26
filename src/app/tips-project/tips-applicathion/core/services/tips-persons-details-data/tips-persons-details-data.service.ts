@@ -74,5 +74,9 @@ export class TipsPersonsDetailsDataService implements OnInit {
     return filterUsers;
   }
 
+  public loadUserElement(id: number) {
+    return this.fakeDataEmplyers.find((el) => el.id === id);
+  }
+
   ngOnInit(): void {}
 }
