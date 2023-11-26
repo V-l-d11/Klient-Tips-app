@@ -1,0 +1,21 @@
+<div class="container d-flex flex-column align-items-center">
+  <div class="row d-flex justify-content-center l">
+    <div class="col text-center">
+      <span class="span-i">Other amount</span>
+    </div>
+    <div class="col text-center">
+      <span class="span-i">min $1</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <input
+        class="inpt-val"
+        type="text"
+        placeholder="$0"
+        [(ngModel)]="inputEl"
+        (input)="inputAmount()"
+      />
+    </div>
+  </div>
+</div>

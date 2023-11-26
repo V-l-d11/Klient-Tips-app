@@ -18,6 +18,7 @@ import { TipsUserDetailsHeaderComponent } from './core/components/user-details/t
 import { TipsUserDetailsValuesInputsComponent } from './core/components/user-details/tips-user-details-values-inputs/tips-user-details-values-inputs.component';
 import { TipsUserInputTipsComponent } from './core/components/user-details/tips-user-input-tips/tips-user-input-tips.component';
 import { TipsUserBtnSectionComponent } from './core/components/user-details/tips-user-btn-section/tips-user-btn-section.component';
+import { TipsUserConditionalInputSecComponent } from './core/components/user-details/tips-user-conditional-input-sec/tips-user-conditional-input-sec.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,6 +37,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TipsUserDetailsValuesInputsComponent,
     TipsUserInputTipsComponent,
     TipsUserBtnSectionComponent,
+    TipsUserConditionalInputSecComponent,
   ],
   imports: [
     CommonModule,

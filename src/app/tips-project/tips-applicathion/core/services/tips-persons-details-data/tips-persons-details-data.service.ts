@@ -1,4 +1,5 @@
 import { Injectable, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Employer } from 'src/app/models/users';
 
 @Injectable({
@@ -11,6 +12,7 @@ export class TipsPersonsDetailsDataService implements OnInit {
       firstName: 'Vlad',
       lastName: 'Bertsel',
       email: 'vlad@bk.ru',
+      tip: 0,
       img: './../../../assets/img/img/userMock.png',
     },
     {
@@ -18,6 +20,7 @@ export class TipsPersonsDetailsDataService implements OnInit {
       firstName: 'Bochdan',
       lastName: 'Makurin',
       email: 'vlad@bk.ru',
+      tip: 0,
       img: './../../../assets/img/img/userMock.png',
     },
     {
@@ -25,6 +28,7 @@ export class TipsPersonsDetailsDataService implements OnInit {
       firstName: 'Sasza',
       lastName: 'Alex',
       email: 'vlad@bk.ru',
+      tip: 0,
       img: './../../../assets/img/img/userMock.png',
     },
     {
@@ -32,6 +36,7 @@ export class TipsPersonsDetailsDataService implements OnInit {
       firstName: 'Eva',
       lastName: 'Bertsed',
       email: 'vlad@bk.ru',
+      tip: 0,
       img: './../../../assets/img/img/userMock.png',
     },
     {
@@ -39,6 +44,7 @@ export class TipsPersonsDetailsDataService implements OnInit {
       firstName: 'Timur',
       lastName: 'Alox',
       email: 'vlad@bk.ru',
+      tip: 0,
       img: './../../../assets/img/img/userMock.png',
     },
     {
@@ -46,6 +52,7 @@ export class TipsPersonsDetailsDataService implements OnInit {
       firstName: 'Nikita',
       lastName: 'Valera',
       email: 'vlad@bk.ru',
+      tip: 0,
       img: './../../../assets/img/img/userMock.png',
     },
     {
@@ -53,11 +60,17 @@ export class TipsPersonsDetailsDataService implements OnInit {
       firstName: 'Vadilen',
       lastName: 'Minin',
       email: 'vlad@bk.ru',
+      tip: 0,
       img: './../../../assets/img/img/userMock.png',
     },
   ];
 
-  constructor() {}
+  private tipSubject = new Subject<number>();
+  tip$ = this.tipSubject.asObservable();
+
+  constructor() {
+    console.log(this.fakeDataEmplyers, 'Fake Data');
+  }
 
   public getAllData() {
     return this.fakeDataEmplyers;
@@ -78,5 +91,15 @@ export class TipsPersonsDetailsDataService implements OnInit {
     return this.fakeDataEmplyers.find((el) => el.id === id);
   }
 
-  ngOnInit(): void {}
+  public updateTip(id: number, tip: number): void {
+    const user = this.fakeDataEmplyers.find((el) => el.id === id);
+    if (user) {
+      user.tip = tip;
+      this.tipSubject.next(tip);
+    }
+  }
+
+  ngOnInit(): void {
+    console.log(this.fakeDataEmplyers, 'Fake Data');
+  }
 }

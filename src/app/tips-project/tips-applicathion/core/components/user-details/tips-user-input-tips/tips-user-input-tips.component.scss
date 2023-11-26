@@ -1,0 +1,60 @@
+.container {
+  margin-top: 166px;
+}
+
+.custom-checkbox {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: #fff971;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #ffd700;
+  }
+
+  &:active {
+    background-color: #ffa500;
+  }
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform-origin: bottom left;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  &.checked .checkmark {
+    opacity: 1;
+  }
+}
+.span-info {
+  color: #000;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.span-info-total {
+  font-size: 12px;
+  font-weight: 500;
+}
+.span-info-total-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.hr {
+  height: 30px;
+}
+hr {
+}

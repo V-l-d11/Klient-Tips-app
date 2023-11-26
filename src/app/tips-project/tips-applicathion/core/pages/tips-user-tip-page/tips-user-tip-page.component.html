@@ -2,4 +2,19 @@
   class="header"
   [data]="item"
 ></app-tips-user-details-header>
-<app-tips-user-details-values-inputs></app-tips-user-details-values-inputs>
+<app-tips-user-details-values-inputs
+  class="btns"
+  (amountSelected)="handleAmountSelected($event)"
+  (isClik)="handleIsClik($event)"
+></app-tips-user-details-values-inputs>
+
+<div *ngIf="isClik">
+  <app-tips-user-conditional-input-sec
+    (parentInputValue)="handleInputElChanged($event)"
+  ></app-tips-user-conditional-input-sec>
+
+  <div *ngIf="!isNumber(parentInputValue)">{{ parentInputValue }} Error</div>
+</div>
+
+<app-tips-user-input-tips [tip]="tip"> </app-tips-user-input-tips>
+<app-tips-user-btn-section></app-tips-user-btn-section>

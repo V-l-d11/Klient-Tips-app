@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tips-user-details-values-inputs',
@@ -7,9 +7,19 @@ import { Component } from '@angular/core';
 })
 export class TipsUserDetailsValuesInputsComponent {
   selectedAmount: number | null = null;
+  isCliked: boolean | null = null;
+
+  @Output() amountSelected = new EventEmitter<number>();
+  @Output() isClik = new EventEmitter<boolean>();
+
+  clickOtherAmount() {
+    this.isCliked = !this.isCliked;
+    console.log(this.isCliked, 'IS CLIKED');
+    this.isClik.emit(this.isCliked);
+  }
 
   selectAmount(amount: number): void {
     this.selectedAmount = amount;
-    console.log(amount);
+    this.amountSelected.emit(amount);
   }
 }

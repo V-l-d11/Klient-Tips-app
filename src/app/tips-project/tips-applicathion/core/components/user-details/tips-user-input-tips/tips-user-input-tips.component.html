@@ -1,1 +1,28 @@
-<p>tips-user-input-tips works!</p>
+<div class="container d-flex flex-column align-items-center">
+  <div class="row w-100">
+    <div class="col d-flex justify-content-between">
+      <span class="span-info">Include fees in tip - 10%(0,30$)</span>
+      <div
+        class="custom-checkbox"
+        [ngClass]="{ checked: isChecked }"
+        (click)="toggleCheckbox()"
+      >
+        <span class="checkmark"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row w-100">
+    <div class="col hr">
+      <hr />
+    </div>
+  </div>
+
+  <div class="row w-100">
+    <div class="col d-flex justify-content-between">
+      <span class="span-info-total">Total to pay</span>
+      <span *ngIf="!tip" class="span-info-total-value">0.0</span>
+      <span *ngIf="tip" class="span-info-total-value">{{ tip }}</span>
+    </div>
+  </div>
+</div>
