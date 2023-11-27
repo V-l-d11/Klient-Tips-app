@@ -1,1 +1,37 @@
-<p>tips-prev-page works!</p>
+<div class="container">
+    <div class="row top-div d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <span *ngIf="isPaymentError" class="status-text">Payment error</span>
+                <span *ngIf="!isPaymentError" class="status-text">Payment successful</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img *ngIf="isPaymentError" class="status-err-icon" src="./../../../../../../assets/img/svg/transactionError.svg">
+                <img *ngIf="!isPaymentError" class="status-err-icon" src="./../../../../../../assets/img/svg/transactionSuccess.svg">
+            </div>
+        </div>
+    </div>
+    <div class="main-div row">
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <span *ngIf="isPaymentError" class="status-descr-header" >Payment error</span>
+                <span *ngIf="!isPaymentError" class="status-descr-header" >Payment successful</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <span *ngIf="isPaymentError" class="status-descr" >Sorry, there was an error,should to try going back</span>
+                <span *ngIf="!isPaymentError" class="status-descr" >Sorry, there was an error,should to try going back</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            <button class="back-btn">
+                <span>Back</span>
+            </button>
+        </div>
+    </div>
+</div>

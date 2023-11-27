@@ -22,6 +22,7 @@ import { TipsUserConditionalInputSecComponent } from './core/components/user-det
 import { TipsUserAddCardSectionComponent } from './core/components/user-details/tips-user-add-card-section/tips-user-add-card-section.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -59,6 +60,6 @@ export function HttpLoaderFactory(http: HttpClient) {
       defaultLanguage: 'en',
     }),
   ],
-  exports: [TipsMainPageComponent, TipsFooterComponent, TipsUsersListComponent],
+  exports: [TipsMainPageComponent, TipsFooterComponent, TipsUsersListComponent, TipsPrevPageComponent],
 })
 export class TipsApplicationModule {}

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./tips-prev-page.component.scss']
 })
 export class TipsPrevPageComponent {
-
+  isPaymentError:boolean = true;
 }

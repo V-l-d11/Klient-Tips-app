@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container {
+    margin-top: 36px;
+    width: 393px;
+}
+.top-div{
+    height: 215px;
+    background: #E6E6E6;
+    text-align: center;
+    padding-bottom: 65px;
+    padding-top: 18px;
+}
+.status-text{
+    color: #000;
+    font-family: Inter;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 18px;
+}
+.status-err-icon{
+    width: 100px;
+    height: 100px;
+    margin-top: 23px;
+}
+.status-descr-header{
+    color: #000;
+    font-family: Inter;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 29px;
+}
+.status-descr{
+    color: #777;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 19px;
+}
+.back-btn{
+    color: white;
+    width: 325px;
+    height: 39px;
+    border-radius: 10px;
+    background: #000;
+    margin-top: 339px;
+    margin-bottom: 20px;
+    border: none;
+}
