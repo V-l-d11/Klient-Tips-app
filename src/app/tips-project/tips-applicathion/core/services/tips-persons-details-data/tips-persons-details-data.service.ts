@@ -64,20 +64,15 @@ export class TipsPersonsDetailsDataService implements OnInit {
       img: './../../../assets/img/img/userMock.png',
     },
   ];
-
   private tipSubject = new Subject<number>();
   tip$ = this.tipSubject.asObservable();
-
   constructor() {
     console.log(this.fakeDataEmplyers, 'Fake Data');
   }
-
   public getAllData() {
     return this.fakeDataEmplyers;
   }
-
   public searchEl(serachTerms: string): Employer[] {
-    console.log(serachTerms, 'Service searchterms');
     const filterUsers = this.fakeDataEmplyers.filter(
       (user) =>
         user.firstName.toLowerCase().includes(serachTerms.toLowerCase()) ||
@@ -86,11 +81,9 @@ export class TipsPersonsDetailsDataService implements OnInit {
     console.log(filterUsers);
     return filterUsers;
   }
-
   public loadUserElement(id: number) {
     return this.fakeDataEmplyers.find((el) => el.id === id);
   }
-
   public updateTip(id: number, tip: number): void {
     const user = this.fakeDataEmplyers.find((el) => el.id === id);
     if (user) {
@@ -98,7 +91,6 @@ export class TipsPersonsDetailsDataService implements OnInit {
       this.tipSubject.next(tip);
     }
   }
-
   ngOnInit(): void {
     console.log(this.fakeDataEmplyers, 'Fake Data');
   }
