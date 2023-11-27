@@ -3,19 +3,31 @@
     <div class="col d-flex justify-content-center">
       <button class="btn-add btn-1">
         <img src="./../../../../../../../assets/img/svg/google.svg" />
+        <span class="pay">Pay</span>
       </button>
     </div>
   </div>
-  <div class="row btn-2-2">
+
+  <app-tips-user-add-card-section
+    *ngIf="isCliked"
+  ></app-tips-user-add-card-section>
+
+  <div class="row btn-2-2" *ngIf="!isCliked">
     <div class="col d-flex justify-content-center">
-      <button class="btn-add btn-2">Pay with bank</button>
+      <button class="btn-add btn-1">
+        <img
+          class="pay-img"
+          src="./../../../../../../../assets/img/svg/applePay.svg"
+        />
+        <span class="pay">Pay</span>
+      </button>
     </div>
   </div>
 
   <div class="row spn-i">
     <div class="col d-flex justify-content-center">
-      <button class="btn-add-tip">
-        <span class="pay-card">Pay with card</span>
+      <button class="btn-add-tip" (click)="handleClikedAddCard()">
+        <span class="pay-card">{{ spanInfo }}</span>
       </button>
     </div>
   </div>

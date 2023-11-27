@@ -1,0 +1,57 @@
+.container {
+  margin-top: 50px;
+}
+.hr {
+  color: #1b0a0a;
+  background-color: #240404;
+}
+.span-el {
+  font-size: 10px;
+  padding-top: 6px;
+}
+
+.inpt-form {
+  width: 100%;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0.5px solid #1b0a0a;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-color: #1b0a0a;
+}
+.inpt-form::placeholder {
+  color: rgba(29, 78, 255, 0.36);
+  font-size: 14px;
+}
+.db-form {
+  width: 155px;
+}
+.lab {
+  margin-top: 30px;
+}
+.btn-add-card {
+  background-color: #000;
+  border: none;
+  color: #fff;
+  width: 100%;
+  height: 39px;
+  border-radius: 10px;
+}
+.btn-el-add-card-section {
+  margin-top: 44px;
+  font-size: 13px;
+}
+.alert-danger {
+  margin-top: 10px;
+  color: red;
+  font-size: 11px;
+}
+.y {
+  margin-top: 25px;
+}
+
+.btn-invalid {
+  background-color: #505050;
+  color: #ffffff;
+}

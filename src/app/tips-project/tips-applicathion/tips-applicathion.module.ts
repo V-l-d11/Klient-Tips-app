@@ -19,6 +19,8 @@ import { TipsUserDetailsValuesInputsComponent } from './core/components/user-det
 import { TipsUserInputTipsComponent } from './core/components/user-details/tips-user-input-tips/tips-user-input-tips.component';
 import { TipsUserBtnSectionComponent } from './core/components/user-details/tips-user-btn-section/tips-user-btn-section.component';
 import { TipsUserConditionalInputSecComponent } from './core/components/user-details/tips-user-conditional-input-sec/tips-user-conditional-input-sec.component';
+import { TipsUserAddCardSectionComponent } from './core/components/user-details/tips-user-add-card-section/tips-user-add-card-section.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -38,6 +40,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TipsUserInputTipsComponent,
     TipsUserBtnSectionComponent,
     TipsUserConditionalInputSecComponent,
+    TipsUserAddCardSectionComponent,
   ],
   imports: [
     CommonModule,
@@ -46,6 +49,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
+    ReactiveFormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

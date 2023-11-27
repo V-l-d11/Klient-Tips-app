@@ -1,0 +1,42 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="container">
+    <div class="row d-flex justify-content-between">
+      <div class="col">
+        <hr сlass="hr" />
+      </div>
+      <div class="col d-flex justify-content-center">
+        <span class="span-el">Or pay with a card</span>
+      </div>
+      <div class="col">
+        <hr class="hr" />
+      </div>
+    </div>
+
+    <div class="row y">
+      <div class="col">
+        <input
+          class="inpt-form"
+          formControlName="cardNumber"
+          placeholder="Card number"
+        />
+      </div>
+    </div>
+
+    <div class="row alert-danger" *ngIf="isCliked && myForm.invalid">
+      <div class="col">
+        <span>Please check the form fields. All fields are required.</span>
+      </div>
+    </div>
+
+    <div class="row btn-el-add-card-section">
+      <div class="col">
+        <button
+          class="btn-add-card"
+          [ngClass]="{ 'btn-invalid': isCliked && myForm.invalid }"
+        >
+          Add a card
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

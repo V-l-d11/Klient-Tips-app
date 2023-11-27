@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TipsUserConditionalInputSecComponent {
   selectedAmount: string | number | null = null;
   inputEl: string = '';
+  errorMessage: string | null = null;
 
   @Output() parentInputValue = new EventEmitter<string>();
   @Output() amountSelected = new EventEmitter<number>();
@@ -16,9 +17,20 @@ export class TipsUserConditionalInputSecComponent {
     this.selectedAmount = amount;
     this.amountSelected.emit(amount);
   }
-
   inputAmount(): void {
-    console.log(this.inputEl, 'This INPUT element');
-    this.parentInputValue.emit(this.inputEl);
+    const inputValue = this.inputEl;
+    const checkVal = parseFloat(this.inputEl);
+
+    if (inputValue.length > 1) {
+      this.errorMessage = null;
+      this.parentInputValue.emit(this.inputEl);
+    }
+    if (isNaN(checkVal) || inputValue.length < 1) {
+      this.errorMessage =
+        'Invalid input value. Please enter a number greater than or equal to $1.';
+    } else {
+      this.errorMessage = null;
+      this.parentInputValue.emit(this.inputEl);
+    }
   }
 }
