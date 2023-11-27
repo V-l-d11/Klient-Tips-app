@@ -17,20 +17,16 @@ export class TipsUserConditionalInputSecComponent {
     this.selectedAmount = amount;
     this.amountSelected.emit(amount);
   }
+
   inputAmount(): void {
     const inputValue = this.inputEl;
-    const checkVal = parseFloat(this.inputEl);
-
-    if (inputValue.length > 1) {
+    this.parentInputValue.emit(this.inputEl);
+    if (inputValue.length <= 1) {
       this.errorMessage = null;
       this.parentInputValue.emit(this.inputEl);
-    }
-    if (isNaN(checkVal) || inputValue.length < 1) {
+    } else {
       this.errorMessage =
         'Invalid input value. Please enter a number greater than or equal to $1.';
-    } else {
-      this.errorMessage = null;
-      this.parentInputValue.emit(this.inputEl);
     }
   }
 }
