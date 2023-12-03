@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { Employer } from 'src/app/models/users';
 
 @Component({
@@ -7,10 +13,11 @@ import { Employer } from 'src/app/models/users';
   styleUrls: ['./tips-user-details-header.component.scss'],
 })
 export class TipsUserDetailsHeaderComponent implements OnInit {
-  @Input() data!: Employer;
+  @Input() data!: Employer | null;
   constructor() {}
 
   ngOnInit(): void {
-    console.log(this.data, 'THis Data HEader');
+    console.log(this.data, 'THis Data HEadersdfsdf');
+    this.data?.firstName;
   }
 }

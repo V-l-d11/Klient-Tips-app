@@ -1,0 +1,78 @@
+$animation-speed: 1s;
+$background-color: #fff;
+$card-color: darken($background-color, 45); //#616161;
+$card-height: 150px;
+$card-width: $card-height * 1.7;
+
+.wrapper {
+  // background: red;
+  height: 100px !important;
+  width: 200px;
+  perspective: 100px;
+}
+
+.card {
+  background: linear-gradient($card-color, darken($card-color, 10));
+  box-shadow: 0px 0px 30px 0px rgba(#000, 0.3);
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: $card-height;
+  width: $card-width;
+}
+
+.cards {
+  .face {
+    @extend .card;
+    .head {
+      display: flex;
+      justify-content: space-between;
+      margin: 16px 16px 0 16px;
+      .title {
+        font-weight: 600;
+        font-size: 20px;
+      }
+    }
+    .main {
+      margin: 16px 16px 0 16px;
+      .number-title {
+        color: darken(#fff, 20);
+      }
+      .number {
+        font-size: 24px;
+      }
+    }
+    .dates {
+      display: flex;
+      max-width: 100px;
+      justify-content: space-between;
+      margin: 16px 16px 16px 16px;
+      .start {
+      }
+      .end {
+      }
+    }
+  }
+}
+
+.twitter-follow-button {
+  top: 8px;
+  left: 8px;
+}
+
+.number-title {
+  font-size: 12px;
+  color: #fff;
+}
+.number {
+  font-size: 15px !important;
+}
+.start,
+.end {
+  font-size: 13px;
+}
+.title {
+  font-size: 18px !important;
+}

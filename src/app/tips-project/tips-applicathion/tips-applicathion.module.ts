@@ -10,7 +10,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  HttpClientJsonpModule,
+} from '@angular/common/http';
 import { TipsUserTipPageComponent } from './core/pages/tips-user-tip-page/tips-user-tip-page.component';
 import { TipsPrevPageComponent } from './core/pages/tips-prev-page/tips-prev-page.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
@@ -21,7 +25,7 @@ import { TipsUserBtnSectionComponent } from './core/components/user-details/tips
 import { TipsUserConditionalInputSecComponent } from './core/components/user-details/tips-user-conditional-input-sec/tips-user-conditional-input-sec.component';
 import { TipsUserAddCardSectionComponent } from './core/components/user-details/tips-user-add-card-section/tips-user-add-card-section.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { TipsBankCardIntrfaceComponent } from './core/components/user-details/tips-bank-card-intrface/tips-bank-card-intrface.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -42,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TipsUserBtnSectionComponent,
     TipsUserConditionalInputSecComponent,
     TipsUserAddCardSectionComponent,
+    TipsBankCardIntrfaceComponent,
   ],
   imports: [
     CommonModule,
@@ -51,6 +56,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     HttpClientModule,
     ReactiveFormsModule,
+    HttpClientJsonpModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -60,6 +66,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       defaultLanguage: 'en',
     }),
   ],
-  exports: [TipsMainPageComponent, TipsFooterComponent, TipsUsersListComponent, TipsPrevPageComponent],
+  exports: [
+    TipsMainPageComponent,
+    TipsFooterComponent,
+    TipsUsersListComponent,
+    TipsPrevPageComponent,
+  ],
 })
 export class TipsApplicationModule {}
