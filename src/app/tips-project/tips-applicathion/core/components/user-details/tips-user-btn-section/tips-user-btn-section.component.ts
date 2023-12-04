@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-tips-user-btn-section',
@@ -8,6 +9,8 @@ import { Component } from '@angular/core';
 export class TipsUserBtnSectionComponent {
   isCliked!: boolean;
   spanInfo: string = 'Pay with card';
+
+  handleFormSubmission(form: FormGroup) {}
 
   handleClikedAddCard() {
     this.isCliked = !this.isCliked;
