@@ -19,6 +19,8 @@
 
 <app-tips-user-input-tips [tip]="tip"> </app-tips-user-input-tips>
 
-<app-tips-user-btn-section></app-tips-user-btn-section>
+<app-tips-user-btn-section
+  (formSubmitToParent)="handleFormSubmitCard($event)"
+></app-tips-user-btn-section>
 
 <app-tips-bank-card-intrface></app-tips-bank-card-intrface>

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { TipsPersonsDetailsDataService } from '../../services/tips-persons-details-data/tips-persons-details-data.service';
 import { Employer } from 'src/app/models/users';
+import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-tips-user-tip-page',
   templateUrl: './tips-user-tip-page.component.html',
@@ -27,6 +28,11 @@ export class TipsUserTipPageComponent implements OnInit, OnDestroy {
       this.id = params['id'];
     });
   }
+
+  handleFormSubmitCard(form: FormGroup) {
+    console.log('Parant', form);
+  }
+
   handleAmountSelected(amount: number): void {
     this.selectedAmount = amount;
     if (this.id != null) {
@@ -35,7 +41,7 @@ export class TipsUserTipPageComponent implements OnInit, OnDestroy {
   }
   handleInputElChanged(event: string): void {
     const val = Number(event.replace(/[^0-9]/g, ''));
-
+    console.log(val, 'VAL');
     this.loadUserInfo.updateTip(Number(this.id), val);
   }
 

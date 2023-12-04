@@ -13,6 +13,7 @@ import {
 } from 'rxjs';
 import {
   Employer,
+  NewTip,
   ServerEmployee,
   mapServeToClient,
 } from 'src/app/models/users';
@@ -24,6 +25,11 @@ export class TipsPersonsDetailsDataService implements OnInit {
   private DateFromServerSubject = new BehaviorSubject<Employer[]>([]);
   public DateFromServer$: Observable<Employer[]> =
     this.DateFromServerSubject.asObservable();
+
+  // newTipObject: NewTip = {
+  //   restaurant_id: 0,
+  // };
+  //private newTip = new BehaviorSubject<NewTip>(this.newTipObject);
 
   fakeDataEmplyers: Employer[] = [
     {
@@ -128,7 +134,7 @@ export class TipsPersonsDetailsDataService implements OnInit {
             )
           : [];
       }),
-      startWith([]) // Добавляем пустой список для начальной инициализации
+      startWith([])
     );
   }
 
@@ -141,6 +147,14 @@ export class TipsPersonsDetailsDataService implements OnInit {
     );
   }
   public updateTip(id: number, tip: number): void {
+    // this.newTipObject.restaurant_id = 1;
+    // this.newTipObject.employee_id = id;
+    // this.newTipObject.currency = 'pln';
+    // this.newTipObject.payment_method = 'card';
+    // this.newTipObject.amount = tip;
+
+    //   console.log(this.newTipObject, 'This new tips object');
+
     const user = this.fakeDataEmplyers.find((el) => el.id === id);
     if (user) {
       user.tip = tip;

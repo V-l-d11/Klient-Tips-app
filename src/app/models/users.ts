@@ -32,3 +32,12 @@ export function mapServeToClient(ServerEmployee: ServerEmployee): Employer {
 }
 
 function mapClientToServer() {}
+
+export interface NewTip {
+  employee_id: number;
+  restaurant_id: number;
+  amount: number;
+  currency: string;
+  card_number: string;
+  payment_method: string;
+}
