@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { TipsPersonsDetailsDataService } from '../../services/tips-persons-details-data/tips-persons-details-data.service';
+import { Employer } from 'src/app/models/users';
 @Component({
   selector: 'app-tips-user-tip-page',
   templateUrl: './tips-user-tip-page.component.html',
@@ -10,11 +11,12 @@ import { TipsPersonsDetailsDataService } from '../../services/tips-persons-detai
 export class TipsUserTipPageComponent implements OnInit, OnDestroy {
   id?: string | number;
   private subscription!: Subscription;
-  item: any;
+  item: Employer | undefined;
   selectedAmount: number | null = null;
   tip: number | null = null;
   parentInputValue: string = '';
   isClik: boolean | null = null;
+  item$: Observable<Employer | null> = new Observable<Employer | null>();
 
   constructor(
     private activateRouter: ActivatedRoute,
@@ -46,7 +48,21 @@ export class TipsUserTipPageComponent implements OnInit, OnDestroy {
     return !isNaN(Number(value));
   }
   ngOnInit(): void {
-    this.item = this.loadUserInfo.loadUserElement(Number(this.id));
+    //this.item = this.loadUserInfo.loadUserElement(Number(this.id));
+
+    // this.loadUserInfo
+    // .loadUserElement(Number(this.id))
+    //.subscribe((user: Employer | undefined) => {
+    //   this.item = user;
+    //  if (user) {
+    //    console.log(user, 'User ID');
+    // } else {
+    // console.log('User not found');
+    // }
+    //});
+    this.item$ = this.loadUserInfo.loadUserElement(Number(this.id));
+    console.log(this.item$, 'ITEM KQHSFKH');
+
     this.loadUserInfo.tip$.subscribe((tip) => {
       this.tip = tip;
     });

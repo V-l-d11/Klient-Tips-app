@@ -11,12 +11,12 @@
   <div class="container" (click)="linkForUser(item)">
     <div class="row">
       <div class="col-6">
-        <img class="user-img" alt="" src="assets/img/img/userMock.png" />
+        <img class="user-img" alt="" src="{{ item.img }}" />
       </div>
       <div class="col sec-info">
         <h2 class="h2-info">{{ item.firstName }}</h2>
         <h3 class="h3-info">{{ item.lastName }}</h3>
-        <span class="span-info">{{ item.email }}</span>
+        <span class="span-info">{{ item.position }}</span>
       </div>
     </div>
   </div>

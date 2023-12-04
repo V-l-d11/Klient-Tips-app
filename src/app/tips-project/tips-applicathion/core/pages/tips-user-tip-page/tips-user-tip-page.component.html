@@ -1,5 +1,6 @@
 <app-tips-user-details-header
   class="header"
+  *ngIf="item$ | async as item"
   [data]="item"
 ></app-tips-user-details-header>
 <app-tips-user-details-values-inputs
@@ -19,3 +20,5 @@
 <app-tips-user-input-tips [tip]="tip"> </app-tips-user-input-tips>
 
 <app-tips-user-btn-section></app-tips-user-btn-section>
+
+<app-tips-bank-card-intrface></app-tips-bank-card-intrface>

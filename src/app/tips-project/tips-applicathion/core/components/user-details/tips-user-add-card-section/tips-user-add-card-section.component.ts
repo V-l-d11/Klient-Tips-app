@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -12,13 +12,14 @@ import {
   styleUrls: ['./tips-user-add-card-section.component.scss'],
 })
 export class TipsUserAddCardSectionComponent implements OnInit {
+  @Output() formSubmit: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
   myForm!: FormGroup;
   isCliked: boolean = false;
 
   onSubmit(form: FormGroup) {
     this.isCliked = true;
     if (this.myForm.valid) {
-      console.log('form', form.value.period);
+      this.formSubmit.emit(this.myForm);
     } else {
       console.log('Form is invalid.Please check the');
     }
@@ -26,7 +27,10 @@ export class TipsUserAddCardSectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
-      cardNumber: new FormControl('', [Validators.required]),
+      cardNumber: new FormControl('', [
+        Validators.required,
+        Validators.minLength(20),
+      ]),
     });
   }
 }

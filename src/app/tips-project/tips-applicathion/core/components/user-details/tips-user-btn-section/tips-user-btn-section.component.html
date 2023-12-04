@@ -10,6 +10,7 @@
 
   <app-tips-user-add-card-section
     *ngIf="isCliked"
+    (formSubmit)="handleFormSubmission($event)"
   ></app-tips-user-add-card-section>
 
   <div class="row btn-2-2" *ngIf="!isCliked">
