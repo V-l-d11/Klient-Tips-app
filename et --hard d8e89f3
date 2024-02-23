@@ -1,0 +1,29 @@
+[33m8135c60[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mv-l-b-1[m[33m)[m HEAD@{0}: reset: moving to HEAD^
+[33md8e89f3[m HEAD@{1}: commit: refact & add end-point add-tips && restaurant-list
+[33m8135c60[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mv-l-b-1[m[33m)[m HEAD@{2}: checkout: moving from V-b-2 to v-l-b-1
+[33m8505194[m[33m ([m[1;31morigin/V-b-2[m[33m, [m[1;32mmain[m[33m, [m[1;32mV-b-2[m[33m)[m HEAD@{3}: checkout: moving from v-l-b-1 to V-b-2
+[33m8135c60[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mv-l-b-1[m[33m)[m HEAD@{4}: checkout: moving from V-b-2 to v-l-b-1
+[33m8505194[m[33m ([m[1;31morigin/V-b-2[m[33m, [m[1;32mmain[m[33m, [m[1;32mV-b-2[m[33m)[m HEAD@{5}: checkout: moving from main to V-b-2
+[33m8505194[m[33m ([m[1;31morigin/V-b-2[m[33m, [m[1;32mmain[m[33m, [m[1;32mV-b-2[m[33m)[m HEAD@{6}: commit (merge): add values and data inputs
+[33mb197ca4[m HEAD@{7}: checkout: moving from v-l-b-1 to main
+[33m8135c60[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mv-l-b-1[m[33m)[m HEAD@{8}: commit: add data values
+[33m9bdb0c5[m HEAD@{9}: commit: add data from serves and functions with get requests
+[33mb197ca4[m HEAD@{10}: checkout: moving from main to v-l-b-1
+[33mb197ca4[m HEAD@{11}: commit: add start instruction
+[33m73e3edf[m HEAD@{12}: commit: peretier
+[33mbe3369a[m HEAD@{13}: pull: Fast-forward
+[33mbb88c53[m HEAD@{14}: commit: add validathions and some forms
+[33m72460d7[m HEAD@{15}: commit: add inputs-tips for user-page-info
+[33md408264[m HEAD@{16}: commit: add Routing system & add second page user-info-tip
+[33m83bdaa7[m HEAD@{17}: commit: add lang files.json and config languages en pl
+[33ma2a616c[m HEAD@{18}: commit: push full screen1 users-list with fake date
+[33m79fcb34[m HEAD@{19}: pull origin main: Fast-forward
+[33md54247f[m HEAD@{20}: commit: add filter data
+[33m10530ac[m HEAD@{21}: commit: add user-list with styles& mock data
+[33ma70aa7c[m HEAD@{22}: commit: add content for user-list-page
+[33mfb98ca8[m HEAD@{23}: commit: add boodstrap init for project
+[33m3215546[m HEAD@{24}: commit: add mock data for All-tips-list-page& add elements for this page
+[33mb3b779b[m HEAD@{25}: commit: add starting Unity-tests to check the initialization of components & add services for data
+[33m5accf1c[m HEAD@{26}: commit: init project tips-client
+[33mab448b5[m HEAD@{27}: Branch: renamed refs/heads/main to refs/heads/main
+[33mab448b5[m HEAD@{29}: commit (initial): initial commit
