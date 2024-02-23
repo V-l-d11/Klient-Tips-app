@@ -1,19 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col">
-      <button class="lang-but ml-auto">
-        <img
-          src="./../../../../../../assets/img/svg/intenet.svg"
-          class="btn-img"
-        />
-      </button>
-    </div>
+    <div class="col"></div>
   </div>
   <div class="row justify-content-center align-items-center">
-    <img
-      src="./../../../../../../../assets/img/img/userBigMock.png"
-      class="img-user"
-    />
+    <img src="{{ data?.img }}" class="img-user" />
   </div>
   <div
     class="row justify-content-center align-items-center text-center inf-sec"
@@ -23,4 +13,6 @@
     <h3 class="h1-inf">{{ data?.lastName }}</h3>
     <span class="span-inf">{{ data?.position }}</span>
   </div>
+
+  <hr class="hr mx-auto text-center" />
 </div>

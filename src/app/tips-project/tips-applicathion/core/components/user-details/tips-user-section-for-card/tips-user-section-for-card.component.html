@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <button class="btn" (click)="handlePayWithCard(true)">
+        Pay with card
+      </button>
+    </div>
+  </div>
+  <div class="row row-l">
+    <div class="col d-flex justify-content-center">
+      <div class="section-card">
+        <app-tips-bank-card-intrface
+          [data]="formData.value"
+        ></app-tips-bank-card-intrface>
+      </div>
+    </div>
+  </div>
+</div>

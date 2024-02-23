@@ -1,0 +1,53 @@
+<div class="container-fluid mx-auto">
+  <div class="row">
+    <div class="col-md-12 text-left">
+      <input
+        class="inpt"
+        type="text"
+        [(ngModel)]="searchTerm"
+        placeholder="Search"
+        (ngModelChange)="onSearch()"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md">
+      <span class="sp">Choose the employee for whom you want to send tips</span>
+    </div>
+  </div>
+
+  <div class="row content">
+    <div
+      class="row content-card"
+      *ngFor="let restaurant of filteredRestaurants$ | async"
+    >
+      <div class="">
+        <div class="d-flex flex-row">
+          <div class="flex-grow-1">
+            <div class="card-body">
+              <h5 class="card-title">{{ restaurant.name }}</h5>
+              <p class="p">{{ restaurant.description }}</p>
+              <div class="row">
+                <div class="col-md">
+                  <button
+                    (click)="redirectToEmployeeListRestaurent(restaurant)"
+                    class="btn-f btn-emp"
+                  >
+                    Employees
+                  </button>
+                  <button class="btn-f btn-about">About</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <img
+            src="{{ restaurant.logo_url }}"
+            class="img-logo"
+            alt="Изображение"
+          />
+        </div>
+      </div>
+      <hr class="hr mx-auto text-center" />
+    </div>
+  </div>
+</div>

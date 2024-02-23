@@ -4,6 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { TipsPersonsDetailsDataService } from '../../services/tips-persons-details-data/tips-persons-details-data.service';
 import { Employer } from 'src/app/models/users';
 import { FormGroup } from '@angular/forms';
+import { TipsTransactionsDataService } from '../../services/tips-transactions-data/tips-transactions-data.service';
 @Component({
   selector: 'app-tips-user-tip-page',
   templateUrl: './tips-user-tip-page.component.html',
@@ -18,35 +19,66 @@ export class TipsUserTipPageComponent implements OnInit, OnDestroy {
   parentInputValue: string = '';
   isClik: boolean | null = null;
   item$: Observable<Employer | null> = new Observable<Employer | null>();
+  formData!: FormGroup;
+  requestData: any = {};
+  paymentError: boolean = false;
+  submitDisabled: boolean = false;
 
   constructor(
     private activateRouter: ActivatedRoute,
     private router: Router,
-    private loadUserInfo: TipsPersonsDetailsDataService
+    private loadUserInfo: TipsPersonsDetailsDataService,
+    private tipService: TipsTransactionsDataService
   ) {
     this.subscription = activateRouter.params.subscribe((params) => {
       this.id = params['id'];
+      this.tipService.setTipData({ employee_id: params['id'] });
     });
   }
 
+  handlePayWithCardClick(val: boolean) {
+    this.tipService.payTip().subscribe(
+      (response) => {
+        console.log(response, 'Response');
+        const responseStatus: boolean = true;
+        this.router.navigate(['paymentStatus'], {
+          queryParams: { paymentStatus: responseStatus },
+        });
+      },
+      (error) => {
+        console.error('Subscription Error', error);
+        const responsStatus: boolean = false;
+        this.paymentError = true;
+        this.submitDisabled = true;
+        this.router.navigate(['paymentStatus'], {
+          queryParams: { paymentStatus: responsStatus },
+        });
+      }
+    );
+  }
+
   handleFormSubmitCard(form: FormGroup) {
-    console.log('Parant', form);
+    let str = form.value.cardNumber;
+    let newStr = str.replace(/-/g, '');
+    this.tipService.setTipData({ card_number: newStr });
+    this.tipService.setTipData({ payment_method: 'card' });
   }
 
   handleAmountSelected(amount: number): void {
     this.selectedAmount = amount;
-    if (this.id != null) {
-      this.loadUserInfo.updateTip(Number(this.id), amount);
-    }
+    this.tipService.setChangeBox({ amount: amount });
+    this.tipService.setTipData({ amount: amount });
+    this.tipService.setTipData({ currency: 'pln' });
   }
   handleInputElChanged(event: string): void {
     const val = Number(event.replace(/[^0-9]/g, ''));
-    console.log(val, 'VAL');
-    this.loadUserInfo.updateTip(Number(this.id), val);
+    this.requestData.amount = val;
+    this.tipService.setChangeBox({ amount: val });
+    this.tipService.setTipData({ amount: val });
+    this.tipService.setTipData({ currency: 'pln' });
   }
 
   handleIsClik(target: boolean): void {
-    console.log(target, 'TRAGET');
     this.isClik = target;
   }
 
@@ -54,21 +86,7 @@ export class TipsUserTipPageComponent implements OnInit, OnDestroy {
     return !isNaN(Number(value));
   }
   ngOnInit(): void {
-    //this.item = this.loadUserInfo.loadUserElement(Number(this.id));
-
-    // this.loadUserInfo
-    // .loadUserElement(Number(this.id))
-    //.subscribe((user: Employer | undefined) => {
-    //   this.item = user;
-    //  if (user) {
-    //    console.log(user, 'User ID');
-    // } else {
-    // console.log('User not found');
-    // }
-    //});
     this.item$ = this.loadUserInfo.loadUserElement(Number(this.id));
-    console.log(this.item$, 'ITEM KQHSFKH');
-
     this.loadUserInfo.tip$.subscribe((tip) => {
       this.tip = tip;
     });

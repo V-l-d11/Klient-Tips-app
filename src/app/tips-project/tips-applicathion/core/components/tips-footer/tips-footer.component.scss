@@ -1,22 +1,32 @@
 .container {
   margin-left: 0px !important;
   margin-right: 0px !important;
-  margin-top: 40px;
+
   padding: 0px !important;
-  margin-bottom: 40px;
-  width: 393px;
+
+  width: 393px !important;
 }
 .col {
   margin: 0px;
   padding: 0px;
-  width: 393px;
+  max-width: 393px;
 }
 .footer-text {
   font-size: 12px;
   color: black;
   font-weight: 500;
-  padding: 0px !important;
+
+  padding-bottom: 10px;
 }
 .col {
   padding: 0px !important;
+  margin: 0px !important;
+}
+.row {
+  max-width: 393px;
+}
+
+.footer {
+  max-width: 393px;
+  margin-top: 20px;
 }

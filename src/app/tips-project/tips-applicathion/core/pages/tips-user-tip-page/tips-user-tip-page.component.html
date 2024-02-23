@@ -17,10 +17,10 @@
   <div *ngIf="!isNumber(parentInputValue)">{{ parentInputValue }} Error</div>
 </div>
 
-<app-tips-user-input-tips [tip]="tip"> </app-tips-user-input-tips>
+<app-tips-user-input-tips> </app-tips-user-input-tips>
 
 <app-tips-user-btn-section
+  [dis]="submitDisabled"
   (formSubmitToParent)="handleFormSubmitCard($event)"
+  (payWithCardClick)="handlePayWithCardClick($event)"
 ></app-tips-user-btn-section>
-
-<app-tips-bank-card-intrface></app-tips-bank-card-intrface>
