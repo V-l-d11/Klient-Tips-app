@@ -15,6 +15,7 @@ import {
   HttpClientModule,
   HttpClientJsonpModule,
 } from '@angular/common/http';
+import { TextMaskModule } from 'angular2-text-mask';
 import { TipsUserTipPageComponent } from './core/pages/tips-user-tip-page/tips-user-tip-page.component';
 import { TipsPrevPageComponent } from './core/pages/tips-prev-page/tips-prev-page.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
@@ -26,6 +27,8 @@ import { TipsUserConditionalInputSecComponent } from './core/components/user-det
 import { TipsUserAddCardSectionComponent } from './core/components/user-details/tips-user-add-card-section/tips-user-add-card-section.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TipsBankCardIntrfaceComponent } from './core/components/user-details/tips-bank-card-intrface/tips-bank-card-intrface.component';
+import { TipsUserSectionForCardComponent } from './core/components/user-details/tips-user-section-for-card/tips-user-section-for-card.component';
+import { TipsFirstPageRestaurantsListComponent } from './core/pages/tips-first-page-restaurants-list/tips-first-page-restaurants-list.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -47,6 +50,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TipsUserConditionalInputSecComponent,
     TipsUserAddCardSectionComponent,
     TipsBankCardIntrfaceComponent,
+    TipsUserSectionForCardComponent,
+    TipsFirstPageRestaurantsListComponent,
   ],
   imports: [
     CommonModule,
@@ -71,6 +76,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     TipsFooterComponent,
     TipsUsersListComponent,
     TipsPrevPageComponent,
+    TipsPrevPageComponent,
+    TipsFirstPageRestaurantsListComponent,
+    TipsNavbarComponent,
   ],
 })
 export class TipsApplicationModule {}

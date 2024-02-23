@@ -17,6 +17,14 @@ html,
 body {
   width: 393px !important;
   box-sizing: border-box !important;
+  background: linear-gradient(
+      337.44deg,
+      rgba(246, 236, 143, 0.13) -8.75%,
+      rgba(0, 0, 0, 0) 72.88%
+    ),
+    linear-gradient(160.45deg, #f6eedd 4.21%, rgba(255, 255, 255, 0) 39.72%);
+  background-attachment: fixed;
+  background-size: cover;
 }
 body {
   margin: 0;

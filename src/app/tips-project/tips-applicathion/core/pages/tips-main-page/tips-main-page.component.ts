@@ -6,6 +6,8 @@ import {
   mapServeToClient,
 } from 'src/app/models/users';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { TipsTransactionsDataService } from '../../services/tips-transactions-data/tips-transactions-data.service';
 @Component({
   selector: 'app-tips-main-page',
   templateUrl: './tips-main-page.component.html',
@@ -18,10 +20,20 @@ export class TipsMainPageComponent implements OnInit, OnDestroy {
   dataList!: Employer[];
   filterDataList!: Employer[];
   allPost!: Employer;
+  id!: number;
   public responseData: Employer[] = [];
   private dataSubscription!: Subscription;
 
-  constructor(private dataServiceUsers: TipsPersonsDetailsDataService) {}
+  constructor(
+    private dataServiceUsers: TipsPersonsDetailsDataService,
+    private activateRouter: ActivatedRoute,
+    private tipService: TipsTransactionsDataService
+  ) {
+    activateRouter.params.subscribe((params) => {
+      this.id = params['id'];
+      this.tipService.setTipData({ restaurant_id: params['id'] });
+    });
+  }
 
   ngOnInit(): void {
     this.dataSubscription = this.dataServiceUsers.DateFromServer$.subscribe(
@@ -32,7 +44,7 @@ export class TipsMainPageComponent implements OnInit, OnDestroy {
       }
     );
 
-    this.dataServiceUsers.getData().subscribe(
+    this.dataServiceUsers.getData(this.id).subscribe(
       () => {},
       (error) => {}
     );

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tips-bank-card-intrface',
   templateUrl: './tips-bank-card-intrface.component.html',
-  styleUrls: ['./tips-bank-card-intrface.component.scss']
+  styleUrls: ['./tips-bank-card-intrface.component.scss'],
 })
 export class TipsBankCardIntrfaceComponent {
-
+  @Input() data: any;
 }

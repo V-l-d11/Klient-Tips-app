@@ -19,14 +19,18 @@ export class TipsUserConditionalInputSecComponent {
   }
 
   inputAmount(): void {
-    const inputValue = this.inputEl;
+    console.log(this.inputEl, 'SF');
     this.parentInputValue.emit(this.inputEl);
-    if (inputValue.length <= 1) {
-      this.errorMessage = null;
-      this.parentInputValue.emit(this.inputEl);
+    if (!Number(this.inputEl)) {
+      this.errorMessage = 'Invalid input value. Please enter a number';
     } else {
-      this.errorMessage =
-        'Invalid input value. Please enter a number greater than or equal to $1.';
+      if (Number(this.inputEl) < 2) {
+        this.errorMessage =
+          'Invalid input value. Please enter a number greater than or equal to $1.';
+      } else {
+        this.errorMessage = null;
+        this.parentInputValue.emit(this.inputEl);
+      }
     }
   }
 }

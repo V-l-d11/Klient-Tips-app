@@ -8,12 +8,7 @@
     </div>
   </div>
 
-  <app-tips-user-add-card-section
-    *ngIf="isCliked"
-    (formSubmit)="handleFormSubmission($event)"
-  ></app-tips-user-add-card-section>
-
-  <div class="row btn-2-2" *ngIf="!isCliked">
+  <div class="row btn-2-2">
     <div class="col d-flex justify-content-center">
       <button class="btn-add btn-1">
         <img
@@ -25,9 +20,25 @@
     </div>
   </div>
 
+  <app-tips-user-add-card-section
+    *ngIf="isCliked"
+    (formSubmit)="handleFormSubmission($event)"
+    (valueEmitter)="handleCloseValue($event)"
+  ></app-tips-user-add-card-section>
+
+  <app-tips-user-section-for-card
+    *ngIf="formData"
+    [formData]="formData"
+    (payWithCardClick)="handlePayWithCardClick($event)"
+  ></app-tips-user-section-for-card>
+
   <div class="row spn-i">
     <div class="col d-flex justify-content-center">
-      <button class="btn-add-tip" (click)="handleClikedAddCard()">
+      <button
+        [disabled]="dis"
+        class="btn-add-tip"
+        (click)="handleClikedAddCard()"
+      >
         <span class="pay-card">{{ spanInfo }}</span>
       </button>
     </div>

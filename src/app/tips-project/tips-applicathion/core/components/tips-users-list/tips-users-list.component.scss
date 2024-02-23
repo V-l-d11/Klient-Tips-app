@@ -4,6 +4,36 @@
   height: 116px;
   margin-bottom: 31px;
 }
+
+.t {
+  box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.2);
+  border: 0.5px solid #0000002b !important;
+  border-radius: 10px;
+  padding: 10px 30px 10px 30px;
+}
+
+.img-logo {
+  width: 80px;
+  height: 80px;
+}
+.card-title {
+  font-size: 17px;
+}
+.parag-pos {
+  font-size: 12px;
+}
+.pos {
+  padding-left: 10px;
+  font-size: 15px;
+  font-weight: 450;
+}
+.pos::first-letter {
+  text-transform: uppercase;
+}
+.h4 {
+  padding-left: 8px;
+  font-size: 17px;
+}
 .element-user {
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */

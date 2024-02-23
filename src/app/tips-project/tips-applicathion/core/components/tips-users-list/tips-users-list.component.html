@@ -7,16 +7,27 @@
     restaurant....</span
   >
 </div>
-<div *ngFor="let item of data" class="container element-user">
-  <div class="container" (click)="linkForUser(item)">
-    <div class="row">
-      <div class="col-6">
-        <img class="user-img" alt="" src="{{ item.img }}" />
-      </div>
-      <div class="col sec-info">
-        <h2 class="h2-info">{{ item.firstName }}</h2>
-        <h3 class="h3-info">{{ item.lastName }}</h3>
-        <span class="span-info">{{ item.position }}</span>
+
+<div *ngFor="let item of data" class="container">
+  <div class="row content-card t" *ngFor="let item of data">
+    <div class="" (click)="linkForUser(item)">
+      <div class="d-flex flex-row">
+        <div class="flex-grow-1">
+          <div class="card-body">
+            <div class="col-md d-flex">
+              <h5 class="card-title">{{ item.firstName }}</h5>
+              <h5 class="h4">{{ item.lastName }}</h5>
+            </div>
+
+            <p class="parag-pos">
+              position:<span class="pos">{{ item.position }}</span>
+            </p>
+            <div class="row">
+              <div class="col-md"></div>
+            </div>
+          </div>
+        </div>
+        <img src="{{ item.img }}" class="img-logo" alt="Изображение" />
       </div>
     </div>
   </div>

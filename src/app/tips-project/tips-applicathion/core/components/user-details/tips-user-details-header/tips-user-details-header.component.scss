@@ -1,5 +1,4 @@
 .container {
-  background-color: #8fc9ff;
   width: 100%;
   padding: 0px;
   margin: 0px;
@@ -18,6 +17,7 @@
 .col {
 }
 .row {
+  max-width: 393px;
   padding: 0px;
 }
 .inf-sec {
@@ -50,4 +50,8 @@
 }
 .h1-inf {
   font-size: 20px;
+}
+.hr {
+  margin-top: 2%;
+  width: 85%;
 }
