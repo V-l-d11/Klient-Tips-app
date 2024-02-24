@@ -32,7 +32,8 @@
               "src/assets/img/svg/internet.svg",
               "src/assets/img/svg/searchIcon.svg",
               "src/assets/img/svg/transactionSuccess.svg",
-              "src/assets/img/svg/transactionError.svg"
+              "src/assets/img/svg/transactionError.svg",
+              "src/assets/img/png/first-page-img.png"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

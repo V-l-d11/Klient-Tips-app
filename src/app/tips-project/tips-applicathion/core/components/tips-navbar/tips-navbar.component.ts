@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-tips-navbar',
@@ -8,4 +9,14 @@ import { Component } from '@angular/core';
     './tips-navbar-mobile.component.scss',
   ],
 })
-export class TipsNavbarComponent {}
+export class TipsNavbarComponent {
+
+constructor(private route: ActivatedRoute, private router: Router) {
+}
+
+handleHomePage() {
+  this.router.navigate(['restaurants']);
+}
+
+ngOnInit(): void {}
+}

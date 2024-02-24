@@ -1,0 +1,79 @@
+*{
+    font-family: 'sans-serif';
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+.main-div{
+    position: relative;
+    background-image: url("./../../../../../../assets/img/img/first-page-img.png");
+    min-height: 100vh;
+}
+
+.start-btn{
+    box-sizing: border-box;
+    position: relative;
+    width: 157px;
+    height: 36px;
+    left: 0px;
+    top: 270px;
+    border: 1px solid #EAEAEA;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+.header-btn{
+    position: absolute;
+    width: 47px;
+    height: 18px;
+    left: 25px;
+    top: 33px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    background: transparent;
+    border: none;
+}
+
+h1{
+    position: relative;
+    width: 333px;
+    height: 156px;
+    left: 25px;
+    top: 242px;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 39px;
+    text-align: center;
+}
+
+
+h2{
+    position: relative;
+    width: 230px;
+    height: 68px;
+    left: 76px;
+    top: 220px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    
+}
+
+.footer_p{
+    position: relative;
+    width: 230px;
+    height: 13px;
+    left: 75px;
+    top: 500px;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.63);
+}

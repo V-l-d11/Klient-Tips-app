@@ -1,35 +1,34 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
-import { TipsNavbarComponent } from './tips-navbar.component';
+import { StartPageComponent } from './start-page.component';
 
-describe('TipsNavbarComponent', () => {
-  let component: TipsNavbarComponent;
-  let fixture: ComponentFixture<TipsNavbarComponent>;
+describe('StartPageComponent', () => {
+  let component: StartPageComponent;
+  let fixture: ComponentFixture<StartPageComponent>;
   let router: Router;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TipsNavbarComponent],
+      declarations: [StartPageComponent],
       imports: [RouterTestingModule]
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TipsNavbarComponent);
+    fixture = TestBed.createComponent(StartPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     router = TestBed.inject(Router);
   });
 
-  it('should create the component', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should navigate to restaurants page when handleHomePage is called', () => {
+  it('should navigate to restaurants page when handleClicktoStart is called', () => {
     const spy = spyOn(router, 'navigate');
-    component.handleHomePage();
+    component.handleClicktoStart();
     expect(spy).toHaveBeenCalledWith(['restaurants']);
   });
 });
-
