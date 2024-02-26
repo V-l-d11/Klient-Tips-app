@@ -1,5 +1,5 @@
 <div class="container-fluid mx-auto">
-  <div class="row">
+  <div class="row ">
     <div class="col-md-12 text-left">
       <input
         class="inpt"
@@ -10,18 +10,18 @@
       />
     </div>
   </div>
-  <div class="row">
+  <div class="row ">
     <div class="col-md">
       <span class="sp">Choose the employee for whom you want to send tips</span>
     </div>
   </div>
 
-  <div class="row content">
+  <div class="row content mx-auto d-flex justify-content-center">
     <div
       class="row content-card"
       *ngFor="let restaurant of filteredRestaurants$ | async"
     >
-      <div class="">
+      <div class="row">
         <div class="d-flex flex-row">
           <div class="flex-grow-1">
             <div class="card-body">

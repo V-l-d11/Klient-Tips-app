@@ -1,22 +1,30 @@
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { TipsNavbarComponent } from './tips-project/tips-applicathion/core/components/tips-navbar/tips-navbar.component';
-describe('App Component should init', () => {
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [AppComponent, TipsNavbarComponent],
-      schemas: [NO_ERRORS_SCHEMA],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [AppComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should create the component', () => {
+  it('should create the app', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have as title 'tips-project'`, () => {
+    expect(component.title).toEqual('tips-project');
+  });
+
 });

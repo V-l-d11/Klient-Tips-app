@@ -29,6 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { TipsBankCardIntrfaceComponent } from './core/components/user-details/tips-bank-card-intrface/tips-bank-card-intrface.component';
 import { TipsUserSectionForCardComponent } from './core/components/user-details/tips-user-section-for-card/tips-user-section-for-card.component';
 import { TipsFirstPageRestaurantsListComponent } from './core/pages/tips-first-page-restaurants-list/tips-first-page-restaurants-list.component';
+import { StartPageComponent } from './core/pages/start-page/start-page.component';
+
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -52,6 +55,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TipsBankCardIntrfaceComponent,
     TipsUserSectionForCardComponent,
     TipsFirstPageRestaurantsListComponent,
+    StartPageComponent,
   ],
   imports: [
     CommonModule,
